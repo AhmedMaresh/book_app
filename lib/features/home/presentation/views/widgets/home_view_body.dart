@@ -17,7 +17,7 @@ class HomeViewBody extends StatelessWidget {
           FeaturedBooksListView(),
           Align(
             alignment: Alignment.centerLeft,
-            child: Text('Best Seller', style: Styles.mediumTitle),
+            child: Text('Best Seller', style: Styles.textStyle24),
           ),
           SizedBox(height: 18),
           BestSellerListViewItem(),
