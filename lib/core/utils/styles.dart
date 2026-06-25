@@ -5,4 +5,9 @@ abstract class Styles {
     fontSize: 24,
     fontWeight: FontWeight.w600,
   );
+
+  static const smallTitle = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.normal,
+  );
 }
