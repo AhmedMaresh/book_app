@@ -1,65 +1,72 @@
 import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_routers.dart';
 import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150,
-      child: Row(
-        children: [
-          AspectRatio(
-            aspectRatio: 2.8 / 4,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(AssetsData.testImage),
+    return GestureDetector(
+      onTap: () {
+        GoRouter.of(context).push(AppRouters.kBookDetails);
+      },
+      child: SizedBox(
+        height: 150,
+        child: Row(
+          children: [
+            AspectRatio(
+              aspectRatio: 2.8 / 4,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  image: const DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage(AssetsData.testImage),
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(width: 10),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * .6,
-                  child: Text(
-                    'Harry Potter and the Goblet of Fire',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: Styles.textStyle20.copyWith(
-                      fontFamily: kGTSectraFine,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 3),
-                const Text('J.K. Rowling', style: Styles.textStyle16),
-                const SizedBox(height: 3),
-                Row(
-                  children: [
-                    Text(
-                      '19.99#',
+            SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * .6,
+                    child: Text(
+                      'Harry Potter and the Goblet of Fire',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: Styles.textStyle20.copyWith(
-                        fontWeight: FontWeight.bold,
+                        fontFamily: kGTSectraFine,
                       ),
                     ),
-                    const Spacer(),
-                    const BookRating(),
-                  ],
-                ),
-              ],
+                  ),
+                  const SizedBox(height: 3),
+                  const Text('J.K. Rowling', style: Styles.textStyle16),
+                  const SizedBox(height: 3),
+                  Row(
+                    children: [
+                      Text(
+                        '19.99#',
+                        style: Styles.textStyle20.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      const BookRating(),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
