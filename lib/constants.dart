@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color.fromARGB(255, 9, 25, 77);
+const kPrimaryColor = Color(0xff100B20);
 const kDurationTranstion = Duration(milliseconds: 500);
 const kGTSectraFine = 'GT Sectra Fine';
