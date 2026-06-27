@@ -1,4 +1,6 @@
+import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/search/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:bookly/features/search/presentation/views/widgets/search_results_list_view.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -8,7 +10,17 @@ class SearchViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(children: [SizedBox(height: 70), CustomSearchTextField()]),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          SizedBox(height: 50),
+          CustomSearchTextField(),
+          SizedBox(height: 25),
+          Text('Results', style: Styles.textStyle24),
+          SizedBox(height: 15),
+          Expanded(child: SearchResultsListView()),
+        ],
+      ),
     );
   }
 }
