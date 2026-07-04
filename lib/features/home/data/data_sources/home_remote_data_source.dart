@@ -38,6 +38,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
 
     List<BookEntity> newestBooks = getBooksList(data);
 
+    saveBooksLocally(newestBooks, kNewestBox);
+
     return newestBooks;
   }
 
