@@ -1,8 +1,11 @@
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/presentation/views/widgets/featured_book_item.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
-  const FeaturedBooksListView({super.key});
+  const FeaturedBooksListView({super.key, required this.books});
+
+  final List<BookEntity> books;
 
   @override
   Widget build(BuildContext context) {
@@ -10,9 +13,9 @@ class FeaturedBooksListView extends StatelessWidget {
       height: MediaQuery.of(context).size.height * .27,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
+        itemCount: books.length,
         itemBuilder: (context, index) {
-          return const FeaturedBookItem();
+          return FeaturedBookItem(image: books[index].image ?? '');
         },
       ),
     );

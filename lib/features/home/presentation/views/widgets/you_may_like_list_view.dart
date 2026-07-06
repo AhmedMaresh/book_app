@@ -12,7 +12,7 @@ class YouMayLikeListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const FeaturedBookItem();
+          return const FeaturedBookItem(image: '');
         },
       ),
     );
