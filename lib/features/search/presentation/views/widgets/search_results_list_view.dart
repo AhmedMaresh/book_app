@@ -10,7 +10,7 @@ class SearchResultsListView extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemCount: 10,
       itemBuilder: (context, index) {
-        return const BookListViewItem();
+        return const BookListViewItem(image: '', title: '', author: '');
       },
     );
   }
