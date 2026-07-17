@@ -8,4 +8,6 @@ abstract class HomeRepo {
   });
 
   Future<Either<Failure, List<BookEntity>>> fetchNewestBooks();
+
+  Future<Either<Failure, List<BookEntity>>> searchBook(String bookName);
 }
