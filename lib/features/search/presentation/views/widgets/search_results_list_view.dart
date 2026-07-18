@@ -1,3 +1,4 @@
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_list_view_item.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class SearchResultsListView extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemCount: 10,
       itemBuilder: (context, index) {
-        return const BookListViewItem(image: '', title: '', author: '');
+        return BookListViewItem(book: [] as BookEntity);
       },
     );
   }

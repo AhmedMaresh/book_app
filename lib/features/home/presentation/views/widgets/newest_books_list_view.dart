@@ -12,13 +12,9 @@ class NewestBooksListView extends StatelessWidget {
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
-      itemCount: 10,
+      itemCount: books.length,
       itemBuilder: (context, index) {
-        return BookListViewItem(
-          image: books[index].image ?? '',
-          title: books[index].title,
-          author: books[index].autherName ?? 'No Name',
-        );
+        return BookListViewItem(book: books[index]);
       },
     );
   }
