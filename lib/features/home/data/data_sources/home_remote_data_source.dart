@@ -47,8 +47,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   @override
   Future<List<BookEntity>> searchBook({required String bookName}) async {
     var data = await apiServices.get(
-      endPoint:
-          'volumes?key=${apiServices.apiKey}&q=intitle:$bookName&filtring=free-ebooks',
+      endPoint: 'volumes?key=${apiServices.apiKey}&q=intitle:$bookName',
     );
 
     List<BookEntity> searchedBook = getBooksList(data);

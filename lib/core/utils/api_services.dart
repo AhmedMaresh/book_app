@@ -12,6 +12,9 @@ class ApiServices {
 
     // return response.data;
 
+    print('REQUEST URL:');
+    print('$baseUrl$endPoint');
+
     try {
       var response = await _dio.get('$baseUrl$endPoint');
       return response.data;
