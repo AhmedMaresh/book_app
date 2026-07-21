@@ -21,7 +21,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks({int pageNumber = 0}) async {
     var data = await apiServices.get(
       endPoint:
-          'volumes?key=${apiServices.apiKey}&q=flutter&&filtring=free-ebooks&startIndex=${pageNumber * 10}',
+          'volumes?key=${apiServices.apiKey}&q=flutter&&filter=free-ebooks&startIndex=${pageNumber * 10}',
     );
 
     List<BookEntity> books = getBooksList(data);
@@ -34,8 +34,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   @override
   Future<List<BookEntity>> fetchNewestBooks() async {
     var data = await apiServices.get(
-      endPoint:
-          'volumes?key=${apiServices.apiKey}&q=programming&sorting=newest&filtring=free-ebooks',
+      endPoint: 'volumes?key=${apiServices.apiKey}&q=programming',
     );
 
     List<BookEntity> newestBooks = getBooksList(data);
