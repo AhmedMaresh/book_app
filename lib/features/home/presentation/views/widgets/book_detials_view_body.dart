@@ -5,9 +5,14 @@ import 'package:bookly/features/home/presentation/views/widgets/you_may_like_sec
 import 'package:flutter/material.dart';
 
 class BookDetialsViewBody extends StatelessWidget {
-  const BookDetialsViewBody({super.key, required this.book});
+  const BookDetialsViewBody({
+    super.key,
+    required this.book,
+    required this.books,
+  });
 
   final BookEntity book;
+  final List<BookEntity> books;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +31,7 @@ class BookDetialsViewBody extends StatelessWidget {
                   author: book.autherName ?? 'No Author Name',
                 ),
                 const Expanded(child: SizedBox(height: 5)),
-                const YouMayLikeSection(),
+                YouMayLikeSection(books: books),
                 const SizedBox(height: 50),
               ],
             ),

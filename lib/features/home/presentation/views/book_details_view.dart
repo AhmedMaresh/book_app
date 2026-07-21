@@ -3,12 +3,15 @@ import 'package:bookly/features/home/presentation/views/widgets/book_detials_vie
 import 'package:flutter/material.dart';
 
 class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({super.key, required this.book});
+  const BookDetailsView({super.key, required this.book, required this.books});
 
   final BookEntity book;
+  final List<BookEntity> books;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: BookDetialsViewBody(book: book));
+    return Scaffold(
+      body: BookDetialsViewBody(book: book, books: books),
+    );
   }
 }

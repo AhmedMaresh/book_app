@@ -8,15 +8,19 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key, required this.book});
+  const BookListViewItem({super.key, required this.book, required this.books});
 
   final BookEntity book;
+  final List<BookEntity> books;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouters.kBookDetailsView, extra: book);
+        GoRouter.of(context).push(
+          AppRouters.kBookDetailsView,
+          extra: {'book': book, 'books': books},
+        );
       },
       child: SizedBox(
         height: 150,

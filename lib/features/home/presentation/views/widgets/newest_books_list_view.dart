@@ -14,7 +14,7 @@ class NewestBooksListView extends StatelessWidget {
       padding: EdgeInsets.zero,
       itemCount: books.length,
       itemBuilder: (context, index) {
-        return BookListViewItem(book: books[index]);
+        return BookListViewItem(book: books[index], books: books);
       },
     );
   }
